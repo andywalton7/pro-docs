@@ -360,7 +360,11 @@ Once you've created a consignment, allocated it to a carrier service and printed
 >
 > For more information on using `ManifestConsignmentsAsync`, see the [Consignments SDK Reference](/../pro-sdk/ref-consignments/index.html)
 
+### Request
+
 INFO IN HERE
+
+### Response
 
 Once PRO has attempted to add the consignments to the manifest queue, the **Manifest Consignments From Query** endpoint returns a `Message` indicating how many consignments met the terms of the query and how many it was able to queue. It also returns a `FailedConsignments` array listing the `consignmentReferences` of those consignments that PRO was unable to queue for manifest.
 
