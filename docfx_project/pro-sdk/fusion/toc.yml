@@ -1,0 +1,41 @@
+- name: Getting Started
+  href: ../articles/toc.yml
+- name: SDK Flows
+  href: ../flows/toc.yml
+  homepage: ../flows/sdk-flows.md
+- name: Consignments SDK Reference
+  href: ../ref-consignments/toc.yml
+  homepage: ../ref-consignments/index.md
+- name: Labels SDK Reference
+  href: ../ref-labels/toc.yml
+  homepage: ../ref-labels/index.md
+- name: Orders SDK Reference
+  href: ../ref-orders/toc.yml
+  homepage: ../ref-orders/index.md  
+- name: Quotes SDK Reference
+  href: ../ref-quotes/toc.yml
+  homepage: ../ref-quotes/index.md  
+- name: Rates SDK Reference
+  href: ../ref-rates/toc.yml
+  homepage: ../ref-rates/index.md   
+- name: Reconciliation SDK Reference
+  href: ../ref-reconciliation/toc.yml
+  homepage: ../ref-reconciliation/index.md   
+- name: Security SDK Reference
+  href: ../ref-security/toc.yml
+  homepage: ../ref-security/index.md   
+- name: Settings SDK Reference
+  href: ../ref-settings/toc.yml
+  homepage: ../ref-settings/index.md   
+- name: Shared SDK Reference
+  href: ../ref-shared/toc.yml
+  homepage: ../ref-shared/index.md   
+- name: Tracking SDK Reference
+  href: ../ref-tracking/toc.yml
+  homepage: ../ref-tracking/index.md   
+- name: Webhooks SDK Reference
+  href: ../ref-webhooks/toc.yml
+  homepage: ../ref-webhooks/index.md   
+- name: XmlValidation SDK Reference
+  href: ../ref-xmlvalidation/toc.yml
+  homepage: ../ref-xmlvalidation/index.md 

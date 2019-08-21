@@ -1,0 +1,154 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "files": [
+            "src/**.csproj"
+          ]
+        }
+      ],
+      "dest": "api/reference",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    },
+    {
+      "src": [
+        {
+          "src": "../../",
+          "files": [
+            "sorted.pro.sdk/sorted.PRO.SDK.Consignments/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Common/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Consignments/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.DeliveryOptions/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Labels/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Orders/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Payments/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Quotes/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Rates/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Reconciliation/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Reports/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Security/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.ServiceAvailability/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Tracking/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DataTypes.Webhooks/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.DeliveryOptions/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.Consignments/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.DeliveryOptions/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.Labels/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.Orders/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.Quotes/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.Reconciliation/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.Security/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.Settings/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.Tracking/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Interfaces.Webhooks/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Labels/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Orders/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Quotes/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Rates/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Reconciliation/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Security/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Settings/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Shared/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Tracking/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.Webhooks/**.csproj",
+            "sorted.pro.sdk/sorted.PRO.SDK.XmlValidation/**.csproj"
+          ]
+        }
+      ],
+      "dest": "pro-sdk/reference",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "pro-sdk/reference/**.yml",
+          "pro-sdk/reference/index.md"       
+        ]
+      },    
+      {
+        "files": [
+          "api/reference/**.yml",
+          "api/reference/index.md"
+        ]
+      },
+      {
+        "files": [
+          "pro-sdk/articles/**.md",
+          "pro-sdk/articles/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ]
+      },
+      {
+        "files": [
+          "pro-sdk/flows/**.md",
+          "pro-sdk/flows/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ]
+      },
+      {
+        "files": [
+          "api/articles/**.md",
+          "api/articles/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ]
+      },
+      {
+        "files": [
+          "ui/articles/**.md",
+          "ui/articles/**/toc.yml",
+          "toc.yml",
+          "*.md"
+        ]
+      },
+      {
+        "files": "api/reference/**"
+      },
+      { 
+        "files": "pro-sdk/fusion/**"
+      },
+      { 
+        "files": "api/fusion/**"
+      }
+    ],
+    "resource": [
+      {
+        "files": [
+          "images/**"
+        ]
+      }
+    ],
+    "overwrite": [
+      {
+        "files": [
+          "apidoc/**.md"
+        ],
+        "exclude": [
+          "obj/**",
+          "_site/**"
+        ]
+      }
+    ],
+    "dest": "_site",
+    "globalMetadataFiles": [],
+    "fileMetadataFiles": [],
+    "template": [
+      "default",
+      "templates/sorted-styles"
+    ],
+    "postProcessors": [],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false
+  }
+}
