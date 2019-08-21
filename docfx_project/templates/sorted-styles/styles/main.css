@@ -214,7 +214,7 @@ div.index-container {
     border: 1px solid #ff055e;
     display: grid;
     grid-template-columns: auto auto auto;
-    width: 80%;
+    width: 100%;
     margin-left: 16.66666667%;
 }
 
@@ -222,13 +222,16 @@ div.index-button {
     display: grid;
     grid-template-columns: auto auto;
     border: 1px solid #333;
-    width: 100%;
+    margin: 15px;
+    height: 100px;
 }
 
 div.button-element {
     border: 1px solid #333;
     margin: auto;
     width: 100%;
+    padding: 10px;
+    height: 100%;
 }
 
 div.button-element p {

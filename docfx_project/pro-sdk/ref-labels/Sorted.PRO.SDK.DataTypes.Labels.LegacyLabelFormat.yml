@@ -28,7 +28,7 @@ items:
   assemblies:
   - Sorted.PRO.SDK.DataTypes.Labels
   namespace: Sorted.PRO.SDK.DataTypes.Labels
-  summary: "\n<p>The format in which the label should be generated.</p> \n<p><strong>Note:</strong> This data type is <em>now deprecated</em>.Please use LabelFormat with ILabelService instead.</p>\n"
+  summary: "\n<p>The format in which the label should be generated.</p> \n<p><strong>Note:</strong> This data type is <em>now deprecated</em>. Please use LabelFormat with ILabelService instead.</p>\n"
   example: []
   syntax:
     content: >-

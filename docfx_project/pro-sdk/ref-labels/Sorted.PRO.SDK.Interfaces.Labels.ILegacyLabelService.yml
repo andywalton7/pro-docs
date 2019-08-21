@@ -31,7 +31,7 @@ items:
   assemblies:
   - Sorted.PRO.SDK.Interfaces.Labels
   namespace: Sorted.PRO.SDK.Interfaces.Labels
-  summary: "\n<p>The interface for the Sorted.PRO.SDK.Labels.LegacyLabelService. Retrieves package and consignment labels.</p> \n<p><strong>Note:</strong> This service is <em>now deprecated</em>.Please use Sorted.PRO.SDK.Labels.LabelService instead.</p>\n"
+  summary: "\n<p>The interface for the Sorted.PRO.SDK.Labels.LegacyLabelService. Retrieves package and consignment labels.</p> \n<p><strong>Note:</strong> This service is <em>now deprecated</em>. Please use Sorted.PRO.SDK.Labels.LabelService instead.</p>\n"
   example: []
   syntax:
     content: >-
