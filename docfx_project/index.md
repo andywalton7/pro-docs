@@ -2,27 +2,21 @@
 
 <div class="index-container">
     <div class="index-button">
-        <div class="button-element">
-            <p>Image here</p>
-        </div>    
-        <div class="button-element">    
-            <p>PRO UI</p>
-        </div>
+        PRO APIs
     </div>
     <div class="index-button">
-        <div class="button-element">
-            <p>Image here</p>
-        </div>    
-        <div class="button-element">    
-            <p>PRO API</p>
-        </div>
+        PRO SDK
     </div>
     <div class="index-button">
-        <div class="button-element">
-            <p>Image here</p>
-        </div>    
-        <div class="button-element">    
-            <p>PRO SDK</p>
-        </div>
+        PRO UI
+    </div>
+    <div class="index-button">
+        PRO UI
+    </div>
+    <div class="index-button">
+        PRO UI
+    </div>
+    <div class="index-button">
+        PRO UI
     </div>
 </div>

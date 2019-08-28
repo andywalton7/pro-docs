@@ -23,7 +23,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-consignments",
+      "dest": "pro-sdk/reference/ref-consignments",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -38,7 +38,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-labels",
+      "dest": "pro-sdk/reference/ref-labels",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -53,7 +53,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-orders",
+      "dest": "pro-sdk/reference/ref-orders",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -68,7 +68,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-quotes",
+      "dest": "pro-sdk/reference/ref-quotes",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -83,7 +83,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-rates",
+      "dest": "pro-sdk/reference/ref-rates",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -98,7 +98,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-reconciliation",
+      "dest": "pro-sdk/reference/ref-reconciliation",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -113,7 +113,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-security",
+      "dest": "pro-sdk/reference/ref-security",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -128,7 +128,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-settings",
+      "dest": "pro-sdk/reference/ref-settings",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -143,7 +143,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-shared",
+      "dest": "pro-sdk/reference/ref-shared",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -158,7 +158,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-tracking",
+      "dest": "pro-sdk/reference/ref-tracking",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -173,7 +173,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-webhooks",
+      "dest": "pro-sdk/reference/ref-webhooks",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     },
@@ -188,7 +188,7 @@
           ]
         }
       ],
-      "dest": "pro-sdk/ref-xmlvalidation",
+      "dest": "pro-sdk/reference/ref-xmlvalidation",
       "disableGitFeatures": false,
       "disableDefaultFilter": false
     }
@@ -197,36 +197,42 @@
     "content": [
       {
         "files": [
-          "pro-sdk/ref-consignments/**.yml",
-          "pro-sdk/ref-consignments/index.md",
-          "pro-sdk/ref-labels/**.yml",
-          "pro-sdk/ref-labels/index.md",
-          "pro-sdk/ref-orders/**.yml",
-          "pro-sdk/ref-orders/index.md",  
-          "pro-sdk/ref-quotes/**.yml",
-          "pro-sdk/ref-quotes/index.md",  
-          "pro-sdk/ref-rates/**.yml",
-          "pro-sdk/ref-rates/index.md",  
-          "pro-sdk/ref-reconciliation/**.yml",
-          "pro-sdk/ref-reconciliation/index.md",  
-          "pro-sdk/ref-security/**.yml",
-          "pro-sdk/ref-security/index.md",  
-          "pro-sdk/ref-settings/**.yml",
-          "pro-sdk/ref-settings/index.md",  
-          "pro-sdk/ref-shared/**.yml",
-          "pro-sdk/ref-shared/index.md",  
-          "pro-sdk/ref-tracking/**.yml",
-          "pro-sdk/ref-tracking/index.md",  
-          "pro-sdk/ref-webhooks/**.yml",
-          "pro-sdk/ref-webhooks/index.md",  
-          "pro-sdk/ref-xmlvalidation/**.yml",
-          "pro-sdk/ref-xmlvalidation/index.md"                  
+          "pro-sdk/reference/ref-consignments/**.yml",
+          "pro-sdk/reference/ref-consignments/index.md",
+          "pro-sdk/reference/ref-labels/**.yml",
+          "pro-sdk/reference/ref-labels/index.md",
+          "pro-sdk/reference/ref-orders/**.yml",
+          "pro-sdk/reference/ref-orders/index.md",  
+          "pro-sdk/reference/ref-quotes/**.yml",
+          "pro-sdk/reference/ref-quotes/index.md",  
+          "pro-sdk/reference/ref-rates/**.yml",
+          "pro-sdk/reference/ref-rates/index.md",  
+          "pro-sdk/reference/ref-reconciliation/**.yml",
+          "pro-sdk/reference/ref-reconciliation/index.md",  
+          "pro-sdk/reference/ref-security/**.yml",
+          "pro-sdk/reference/ref-security/index.md",  
+          "pro-sdk/reference/ref-settings/**.yml",
+          "pro-sdk/reference/ref-settings/index.md",  
+          "pro-sdk/reference/ref-shared/**.yml",
+          "pro-sdk/reference/ref-shared/index.md",  
+          "pro-sdk/reference/ref-tracking/**.yml",
+          "pro-sdk/reference/ref-tracking/index.md",  
+          "pro-sdk/reference/ref-webhooks/**.yml",
+          "pro-sdk/reference/ref-webhooks/index.md",  
+          "pro-sdk/reference/ref-xmlvalidation/**.yml",
+          "pro-sdk/reference/ref-xmlvalidation/index.md"                  
         ]
       },    
       {
         "files": [
           "api/reference/**.yml",
-          "api/reference/index.md"
+          "api/reference/**.md"
+        ]
+      },
+      {
+        "files": [
+          "pro-sdk/reference/**.yml",
+          "pro-sdk/reference/index.md"
         ]
       },
       {

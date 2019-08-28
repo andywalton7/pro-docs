@@ -213,16 +213,15 @@ pre {
 div.index-container {
     border: 1px solid #ff055e;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33% 67%;
     width: 100%;
-    margin-left: 16.66666667%;
+    grid-column-gap: 0%;
 }
 
 div.index-button {
     display: grid;
     grid-template-columns: auto auto;
     border: 1px solid #333;
-    margin: 15px;
     height: 100px;
 }
 
@@ -260,3 +259,23 @@ h3#constructors, h3#methods {
 article span.small.pull-right {
     display: none;
 }
+
+/*ul.navbar-nav li.active {
+    position: relative;
+    display: inline-block;
+}
+
+ul.navbar-nav li ul.level2 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1; 
+    margin: -5px 0 0 0;
+}
+
+ul.navbar-nav li:hover ul.level2 {
+    display: block;
+}*/

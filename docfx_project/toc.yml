@@ -1,6 +1,9 @@
-- name: PRO API Guide
-  href: api/fusion/
-- name: PRO SDK Guide
-  href: pro-sdk/fusion/ 
-- name: PRO UI Help
-  href: ui/articles/
+- name: SDK User Guide
+  href: pro-sdk/articles/ 
+  homepage: pro-sdk/articles/index.md
+- name: SDK Flows
+  href: pro-sdk/flows/
+  homepage: pro-sdk/flows/index.md
+- name: SDK Reference
+  href: pro-sdk/fusion/
+  homepage: pro-sdk/reference/index.md
