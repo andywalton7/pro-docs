@@ -32,7 +32,7 @@ items:
   assemblies:
   - Sorted.PRO.SDK.Labels
   namespace: Sorted.PRO.SDK.Labels
-  summary: "\n<p>The interface for the Sorted.PRO.SDK.Labels.LegacyLabelService. Retrieves package and consignment labels.</p> \n<p><strong>Note:</strong> This service is <em>now deprecated</em>.Please use Sorted.PRO.SDK.Labels.LabelService instead.</p>\n"
+  summary: "\n<p>Retrieves package and consignment labels.</p> \n<p><strong>Note:</strong> This service is <em>now deprecated</em>. Please use <a href=\"Sorted.PRO.SDK.Labels.LabelService.html\">LabelService</a> instead.</p>\n"
   example: []
   syntax:
     content: 'public class LegacyLabelService : BaseService, ILegacyLabelService'
@@ -418,7 +418,7 @@ items:
       description: The package reference to retrieve a label for
     - id: labelFormat
       type: Sorted.PRO.SDK.DataTypes.Labels.LegacyLabelFormat
-      description: The format to output the label in. Must be a valid LegacyLabelFormat
+      description: The format to output the label in
     return:
       type: Sorted.PRO.SDK.DataTypes.Labels.GetLabelsResponse
       description: Label data for the selected package
@@ -520,7 +520,7 @@ items:
       description: The package reference to retrieve a label for
     - id: labelFormat
       type: Sorted.PRO.SDK.DataTypes.Labels.LegacyLabelFormat
-      description: The format to output the label in. Must be a valid LegacyLabelFormat
+      description: The format to output the label in
     return:
       type: System.Threading.Tasks.Task{Sorted.PRO.SDK.DataTypes.Labels.GetLabelsResponse}
       description: Label data for the selected package

@@ -25,7 +25,7 @@ items:
   assemblies:
   - Sorted.PRO.SDK.Interfaces.Labels
   namespace: Sorted.PRO.SDK.Interfaces.Labels
-  summary: "\nThe interface for Sorted.PRO.SDK.Labels.LabelService. Retrieves package and consignment labels.\n"
+  summary: "\nThe interface for <a href=\"Sorted.PRO.SDK.Labels.LabelService.html\">LabelService</a>. Retrieves package and consignment labels.\n"
   example: []
   syntax:
     content: public interface ILabelService
@@ -114,7 +114,7 @@ items:
       description: The package reference to retrieve a label for
     - id: labelFormat
       type: Sorted.PRO.SDK.DataTypes.Labels.LabelFormat
-      description: The format to output the labels in. Must be a valid LabelFormat
+      description: The format to output the labels in
     - id: resolution
       type: System.Int32
       description: The label resolution required

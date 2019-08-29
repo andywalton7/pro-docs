@@ -27,7 +27,7 @@ items:
   assemblies:
   - Sorted.PRO.SDK.DataTypes.Labels
   namespace: Sorted.PRO.SDK.DataTypes.Labels
-  summary: "\nThe request object generated when retrieving labels. Sent as part of a GetLabelsRequest.\n"
+  summary: "\nThe request object generated when retrieving labels. Sent as part of a <xref href=\"Sorted.PRO.SDK.DataTypes.Labels.GetLabelsRequest\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: >-
@@ -131,7 +131,7 @@ items:
   assemblies:
   - Sorted.PRO.SDK.DataTypes.Labels
   namespace: Sorted.PRO.SDK.DataTypes.Labels
-  summary: "\nThe page size at which PRO should generate the label. Must be a supported PRO PageSize.\n"
+  summary: "\nThe page size at which PRO should generate the label.\n"
   example: []
   syntax:
     content: >-
@@ -251,6 +251,11 @@ items:
   modifiers.vb:
   - Public
 references:
+- uid: Sorted.PRO.SDK.DataTypes.Labels.GetLabelsRequest
+  commentId: T:Sorted.PRO.SDK.DataTypes.Labels.GetLabelsRequest
+  name: GetLabelsRequest
+  nameWithType: GetLabelsRequest
+  fullName: Sorted.PRO.SDK.DataTypes.Labels.GetLabelsRequest
 - uid: Sorted.PRO.SDK.DataTypes.Labels
   commentId: N:Sorted.PRO.SDK.DataTypes.Labels
   name: Sorted.PRO.SDK.DataTypes.Labels

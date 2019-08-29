@@ -39,6 +39,7 @@ items:
       <DataContractType("Get Labels Request", "A request to retrieve labels.")>
 
       Public Class GetLabelsRequest
+
           Inherits LabelsRequest
   inheritance:
   - System.Object

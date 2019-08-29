@@ -28,7 +28,7 @@ items:
   assemblies:
   - Sorted.PRO.SDK.DataTypes.Labels
   namespace: Sorted.PRO.SDK.DataTypes.Labels
-  summary: "\n<p>The format in which the label should be generated.</p> \n<p><strong>Note:</strong> This data type is <em>now deprecated</em>. Please use LabelFormat with ILabelService instead.</p>\n"
+  summary: "\n<p>The format in which the label should be generated.</p> \n<p><strong>Note:</strong> This data type is <em>now deprecated</em>. Please use <xref href=\"Sorted.PRO.SDK.DataTypes.Labels.LabelFormat\" data-throw-if-not-resolved=\"false\"></xref> with <a href=\"Sorted.PRO.SDK.Interfaces.Labels.ILabelService.html\">ILabelService</a> instead.</p>\n"
   example: []
   syntax:
     content: >-
@@ -340,6 +340,12 @@ items:
   - Public
   - Const
 references:
+- uid: Sorted.PRO.SDK.DataTypes.Labels.LabelFormat
+  commentId: T:Sorted.PRO.SDK.DataTypes.Labels.LabelFormat
+  parent: Sorted.PRO.SDK.DataTypes.Labels
+  name: LabelFormat
+  nameWithType: LabelFormat
+  fullName: Sorted.PRO.SDK.DataTypes.Labels.LabelFormat
 - uid: Sorted.PRO.SDK.DataTypes.Labels
   commentId: N:Sorted.PRO.SDK.DataTypes.Labels
   name: Sorted.PRO.SDK.DataTypes.Labels
