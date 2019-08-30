@@ -81,7 +81,7 @@ items:
   assemblies:
   - Sorted.PRO.SDK.Labels
   namespace: Sorted.PRO.SDK.Labels
-  summary: "\nService for retrieving despatch labels\n"
+  summary: "\n/// Initializes a new instance of the <xref href=\"Sorted.PRO.SDK.Labels.LabelService\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
   example: []
   syntax:
     content: public LabelService(string apiKey, IEndpoints endpoints, IHttpClientFactory httpClientFactory, ILogger log, Dictionary<string, string> optionalHeaders = null)
@@ -786,6 +786,11 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Sorted.PRO.SDK.Labels.LabelService
+  commentId: T:Sorted.PRO.SDK.Labels.LabelService
+  name: LabelService
+  nameWithType: LabelService
+  fullName: Sorted.PRO.SDK.Labels.LabelService
 - uid: Sorted.PRO.SDK.Interfaces.IEndpoints
   commentId: T:Sorted.PRO.SDK.Interfaces.IEndpoints
   isExternal: true

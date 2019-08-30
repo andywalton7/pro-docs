@@ -28,17 +28,17 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocationService
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 10
+    startLine: 13
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
+  summary: "\nAllocate consignments and retrieve labels in a single operation.\n"
+  example: []
   syntax:
     content: 'public class AllocationService : BaseService, IAllocationService'
     content.vb: >-
       Public Class AllocationService
-
           Inherits BaseService
-
           Implements IAllocationService
   inheritance:
   - System.Object
@@ -83,23 +83,30 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: .ctor
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 14
+    startLine: 25
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
+  summary: "\nInitializes a new instance of the <xref href=\"Sorted.PRO.SDK.Consignments.AllocationService\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
   syntax:
     content: public AllocationService(string apiKey, IEndpoints endpoints, IHttpClientFactory httpClientFactory, ILogger log, Dictionary<string, string> optionalHeaders = null)
     parameters:
     - id: apiKey
       type: System.String
+      description: The API key of the user making the request
     - id: endpoints
       type: Sorted.PRO.SDK.Shared.Interfaces.IEndpoints
+      description: An instance of <xref href="Sorted.PRO.SDK.Interfaces.IEndpoints" data-throw-if-not-resolved="false"></xref>
     - id: httpClientFactory
       type: Sorted.PRO.SDK.Shared.Interfaces.IHttpClientFactory
+      description: Provides a re-usable instance of <xref href="System.Net.Http.HttpClient" data-throw-if-not-resolved="false"></xref>
     - id: log
       type: Sorted.PRO.SDK.Shared.Interfaces.ILogger
+      description: A logger implementing <xref href="Sorted.PRO.SDK.Interfaces.ILogger" data-throw-if-not-resolved="false"></xref>
     - id: optionalHeaders
       type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: Represents a collection of keys and values
     content.vb: Public Sub New(apiKey As String, endpoints As IEndpoints, httpClientFactory As IHttpClientFactory, log As ILogger, optionalHeaders As Dictionary(Of String, String) = Nothing)
   overload: Sorted.PRO.SDK.Consignments.AllocationService.#ctor*
   nameWithType.vb: AllocationService.AllocationService(String, IEndpoints, IHttpClientFactory, ILogger, Dictionary(Of String, String))
@@ -127,11 +134,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateAndGetLabels
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 26
+    startLine: 37
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocate consignment and retrieve labels in the specified format.\n"
+  summary: "\nAllocate consignment to the cheapest eligible carrier service and retrieve labels in the specified format.\n"
   example: []
   syntax:
     content: >-
@@ -177,19 +184,24 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateAndGetLabelsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 39
+    startLine: 56
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
+  summary: "\nAllocate consignment to the cheapest eligible carrier service and retrieve labels in the specified format. Asynchronous method.\n"
+  example: []
   syntax:
     content: public Task<AllocateAndGetLabelsResponse> AllocateAndGetLabelsAsync(string consignmentReference, string labelFormat)
     parameters:
     - id: consignmentReference
       type: System.String
+      description: The consignment reference.
     - id: labelFormat
       type: System.String
+      description: Label format (e.g. PDF, PNG).
     return:
       type: System.Threading.Tasks.Task{Sorted.PRO.SDK.DataTypes.Consignments.AllocateAndGetLabelsResponse}
+      description: A response object containing the allocated consignment details, return consignment details (if any) and label as base64 encoded string.
     content.vb: Public Function AllocateAndGetLabelsAsync(consignmentReference As String, labelFormat As String) As Task(Of AllocateAndGetLabelsResponse)
   overload: Sorted.PRO.SDK.Consignments.AllocationService.AllocateAndGetLabelsAsync*
   implements:
@@ -216,11 +228,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateWithServiceRefAndGetLabels
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 52
+    startLine: 69
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocate consignment using the specified service reference and retrieve labels in the specified format.\n"
+  summary: "\nAllocate consignment to the specified service and retrieve labels in the specified format.\n"
   example: []
   syntax:
     content: >-
@@ -233,7 +245,7 @@ items:
       description: The consignment reference.
     - id: serviceRef
       type: System.String
-      description: The service reference.
+      description: The reference of the service to allocate to.
     - id: labelFormat
       type: System.String
       description: Label format (e.g. PDF, PNG).
@@ -269,21 +281,27 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateWithServiceRefAndGetLabelsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 65
+    startLine: 90
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
+  summary: "\nAllocate consignment to the specified service and retrieve labels in the specified format. Asynchronous method.\n"
+  example: []
   syntax:
     content: public Task<AllocateAndGetLabelsResponse> AllocateWithServiceRefAndGetLabelsAsync(string consignmentReference, string serviceRef, string labelFormat)
     parameters:
     - id: consignmentReference
       type: System.String
+      description: The consignment reference.
     - id: serviceRef
       type: System.String
+      description: The reference of the service to allocate to.
     - id: labelFormat
       type: System.String
+      description: Label format (e.g. PDF, PNG).
     return:
       type: System.Threading.Tasks.Task{Sorted.PRO.SDK.DataTypes.Consignments.AllocateAndGetLabelsResponse}
+      description: A response object containing the allocated consignment details, return consignment details (if any) and label as base64 encoded string.
     content.vb: Public Function AllocateWithServiceRefAndGetLabelsAsync(consignmentReference As String, serviceRef As String, labelFormat As String) As Task(Of AllocateAndGetLabelsResponse)
   overload: Sorted.PRO.SDK.Consignments.AllocationService.AllocateWithServiceRefAndGetLabelsAsync*
   implements:
@@ -310,11 +328,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateWithServiceGroupAndGetLabels
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 78
+    startLine: 103
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocate consignment using the specified service reference and retrieve labels in the specified format.\n"
+  summary: "\nAllocate consignment to the cheapest eligible service in the specified service group and retrieve labels in the specified format.\n"
   example: []
   syntax:
     content: >-
@@ -363,21 +381,27 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateWithServiceGroupAndGetLabelsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 91
+    startLine: 123
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
+  summary: "\nAllocate consignment to the cheapest eligible service in the specified service group and retrieve labels in the specified format. Asynchronous method.\n"
+  example: []
   syntax:
     content: public Task<AllocateAndGetLabelsResponse> AllocateWithServiceGroupAndGetLabelsAsync(string consignmentReference, string serviceGroupReference, string labelFormat)
     parameters:
     - id: consignmentReference
       type: System.String
+      description: The consignment reference.
     - id: serviceGroupReference
       type: System.String
+      description: The service group reference.
     - id: labelFormat
       type: System.String
+      description: Label format (e.g. PDF, PNG).
     return:
       type: System.Threading.Tasks.Task{Sorted.PRO.SDK.DataTypes.Consignments.AllocateAndGetLabelsResponse}
+      description: A response object containing the allocated consignment details, return consignment details (if any) and label as base64 encoded string.
     content.vb: Public Function AllocateWithServiceGroupAndGetLabelsAsync(consignmentReference As String, serviceGroupReference As String, labelFormat As String) As Task(Of AllocateAndGetLabelsResponse)
   overload: Sorted.PRO.SDK.Consignments.AllocationService.AllocateWithServiceGroupAndGetLabelsAsync*
   implements:
@@ -404,11 +428,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateWithQuoteReferenceAndGetLabels
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 104
+    startLine: 136
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocate consignment using the specified quote reference and retrieve labels in the specified format.\n"
+  summary: "\nAllocate consignment to  the specified quote reference and retrieve labels in the specified format.\n"
   example: []
   syntax:
     content: >-
@@ -457,21 +481,27 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateWithQuoteReferenceAndGetLabelsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/AllocationService.cs
-    startLine: 117
+    startLine: 156
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
+  summary: "\nAllocate consignment to  the specified quote reference and retrieve labels in the specified format. Asynchronous method.\n"
+  example: []
   syntax:
     content: public Task<AllocateAndGetLabelsResponse> AllocateWithQuoteReferenceAndGetLabelsAsync(string consignmentReference, string quoteReference, string labelFormat)
     parameters:
     - id: consignmentReference
       type: System.String
+      description: The consignment reference.
     - id: quoteReference
       type: System.String
+      description: The service group reference.
     - id: labelFormat
       type: System.String
+      description: Label format (e.g. PDF, PNG).
     return:
       type: System.Threading.Tasks.Task{Sorted.PRO.SDK.DataTypes.Consignments.AllocateAndGetLabelsResponse}
+      description: A response object containing the allocated consignment details, return consignment details (if any) and label as base64 encoded string.
     content.vb: Public Function AllocateWithQuoteReferenceAndGetLabelsAsync(consignmentReference As String, quoteReference As String, labelFormat As String) As Task(Of AllocateAndGetLabelsResponse)
   overload: Sorted.PRO.SDK.Consignments.AllocationService.AllocateWithQuoteReferenceAndGetLabelsAsync*
   implements:
@@ -1045,6 +1075,20 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: Sorted.PRO.SDK.Consignments.AllocationService
+  commentId: T:Sorted.PRO.SDK.Consignments.AllocationService
+  name: AllocationService
+  nameWithType: AllocationService
+  fullName: Sorted.PRO.SDK.Consignments.AllocationService
+- uid: Sorted.PRO.SDK.Interfaces.IEndpoints
+  commentId: T:Sorted.PRO.SDK.Interfaces.IEndpoints
+  isExternal: true
+- uid: Sorted.PRO.SDK.Interfaces.ILogger
+  commentId: T:Sorted.PRO.SDK.Interfaces.ILogger
+  isExternal: true
+- uid: System.Net.Http.HttpClient
+  commentId: T:System.Net.Http.HttpClient
+  isExternal: true
 - uid: Sorted.PRO.SDK.Consignments.AllocationService.#ctor*
   commentId: Overload:Sorted.PRO.SDK.Consignments.AllocationService.#ctor
   name: AllocationService

@@ -43,15 +43,13 @@ items:
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nConsignment Allocation Service\n"
+  summary: "\nService for allocating consignments to carrier services using various criteria\n"
   example: []
   syntax:
     content: 'public class ConsignmentAllocationService : BaseService, IConsignmentAllocationService'
     content.vb: >-
       Public Class ConsignmentAllocationService
-
           Inherits BaseService
-
           Implements IConsignmentAllocationService
   seealso:
   - linkId: Sorted.PRO.SDK.Services.BaseService
@@ -101,7 +99,7 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: .ctor
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 32
+    startLine: 31
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
@@ -112,27 +110,21 @@ items:
     parameters:
     - id: apiKey
       type: System.String
-      description: The API key.
+      description: The API key of the user making the request
     - id: endpoints
       type: Sorted.PRO.SDK.Shared.Interfaces.IEndpoints
-      description: The endpoints.
+      description: An instance of <xref href="Sorted.PRO.SDK.Interfaces.IEndpoints" data-throw-if-not-resolved="false"></xref>
     - id: httpClientFactory
       type: Sorted.PRO.SDK.Shared.Interfaces.IHttpClientFactory
-      description: Used to provide a re-usable instance of <xref href="System.Net.Http.HttpClient" data-throw-if-not-resolved="false"></xref>
+      description: Provides a re-usable instance of <xref href="System.Net.Http.HttpClient" data-throw-if-not-resolved="false"></xref>
     - id: log
       type: Sorted.PRO.SDK.Shared.Interfaces.ILogger
-      description: The log.
+      description: A logger implementing <xref href="Sorted.PRO.SDK.Interfaces.ILogger" data-throw-if-not-resolved="false"></xref>
     - id: optionalHeaders
       type: System.Collections.Generic.Dictionary{System.String,System.String}
+      description: Represents a collection of keys and values
     content.vb: Public Sub New(apiKey As String, endpoints As IEndpoints, httpClientFactory As IHttpClientFactory, log As ILogger, optionalHeaders As Dictionary(Of String, String) = Nothing)
   overload: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.#ctor*
-  exceptions:
-  - type: System.ArgumentNullException
-    commentId: T:System.ArgumentNullException
-    description: endpoints
-  - type: System.ArgumentException
-    commentId: T:System.ArgumentException
-    description: You must supply an api key;apiKey
   nameWithType.vb: ConsignmentAllocationService.ConsignmentAllocationService(String, IEndpoints, IHttpClientFactory, ILogger, Dictionary(Of String, String))
   modifiers.csharp:
   - public
@@ -158,11 +150,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignments
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 42
+    startLine: 43
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the specified consignments using default allocation rules.\n"
+  summary: "\nAllocates each specified consignment to the cheapest available service that meets the default allocation rules.\n"
   example: []
   syntax:
     content: >-
@@ -177,7 +169,7 @@ items:
       description: The request.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate Using Default Rules", "Allocates the specified consignments using your default rules.", "Allocation", GetType(AllocateConsignmentsRequest), GetType(List(Of AllocationSummary)), "/allocation/allocate", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -215,11 +207,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignmentsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 63
+    startLine: 66
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the consignments using default allocation rules.\n"
+  summary: "\nAllocates each specified consignment to the cheapest available service that meets the default allocation rules. Asynchronous method.\n"
   example: []
   syntax:
     content: public Task<List<AllocationSummary>> AllocateConsignmentsAsync(AllocateConsignmentsRequest request)
@@ -229,7 +221,7 @@ items:
       description: The request.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: Public Function AllocateConsignmentsAsync(request As AllocateConsignmentsRequest) As Task(Of List(Of AllocationSummary))
   overload: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.AllocateConsignmentsAsync*
   implements:
@@ -256,11 +248,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignments
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 74
+    startLine: 79
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates all unallocated consignments due to be shipped before the specified date/time.\n"
+  summary: "\nAllocates all unallocated consignments due to be shipped before the specified date/time to the cheapest eligible carrier service.\n"
   example: []
   syntax:
     content: >-
@@ -275,7 +267,7 @@ items:
       description: The request.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate All Unallocated Consignments", "Allocates all unallocated consignments due to be shipped before the specified date/time.", "Allocation", GetType(AllocateAllConsignmentsRequest), GetType(List(Of AllocationSummary)), "/allocation/allocate/{shipByDate=date}", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -313,11 +305,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignmentsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 95
+    startLine: 100
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates all unallocated consignments due to be shipped before the specified date/time.\n"
+  summary: "\nAllocates all unallocated consignments due to be shipped before the specified date/time to the cheapest eligible carrier service. Asynchronous method.\n"
   example: []
   syntax:
     content: public Task<List<AllocationSummary>> AllocateConsignmentsAsync(AllocateAllConsignmentsRequest request)
@@ -354,11 +346,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignments
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 106
+    startLine: 113
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the specified consignments with the specific carrier service.\n"
+  summary: "\nAllocates the specified consignments to the specific carrier service.\n"
   example: []
   syntax:
     content: >-
@@ -373,7 +365,7 @@ items:
       description: The request.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate With Carrier Service", "Allocates the specified consignments with the specified carrier service.", "Allocation", GetType(AllocateConsignmentsWithCarrierServiceRequest), GetType(List(Of AllocationSummary)), "/allocation/allocatewithcarrierservice", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -411,11 +403,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignmentsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 127
+    startLine: 136
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the specified consignments with the specific carrier service.\n"
+  summary: "\nAllocates the specified consignments to the specific carrier service. Asynchronous method.\n"
   example: []
   syntax:
     content: public Task<List<AllocationSummary>> AllocateConsignmentsAsync(AllocateConsignmentsWithCarrierServiceRequest request)
@@ -425,7 +417,7 @@ items:
       description: The request.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: Public Function AllocateConsignmentsAsync(request As AllocateConsignmentsWithCarrierServiceRequest) As Task(Of List(Of AllocationSummary))
   overload: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.AllocateConsignmentsAsync*
   implements:
@@ -452,11 +444,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignments
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 138
+    startLine: 149
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates all unallocated consignments due to be shipped before the specified date/time with the specified carrier service.\n"
+  summary: "\nAllocates all unallocated consignments that are due to be shipped before the specified date/time to the specified carrier service.\n"
   example: []
   syntax:
     content: >-
@@ -471,7 +463,7 @@ items:
       description: The request.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate All With Carrier Service", "Allocates all unallocated consignments due to be shipped before the specified date/time with the specified carrier service.", "Allocation", GetType(AllocateAllConsignmentsWithCarrierServiceRequest), GetType(List(Of AllocationSummary)), "/allocation/allocatewithcarrierservice/{shipByDate=date}", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -509,11 +501,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignmentsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 159
+    startLine: 172
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates all unallocated consignments due to be shipped before the specified date/time with the specified carrier service.\n"
+  summary: "\nAllocates all unallocated consignments that are due to be shipped before the specified date/time to the specified carrier service. Asynchronous method.\n"
   example: []
   syntax:
     content: public Task<List<AllocationSummary>> AllocateConsignmentsAsync(AllocateAllConsignmentsWithCarrierServiceRequest request)
@@ -523,7 +515,7 @@ items:
       description: The request.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: Public Function AllocateConsignmentsAsync(request As AllocateAllConsignmentsWithCarrierServiceRequest) As Task(Of List(Of AllocationSummary))
   overload: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.AllocateConsignmentsAsync*
   implements:
@@ -550,11 +542,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignments
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 168
+    startLine: 184
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the consignments with service filters.\n"
+  summary: "\nAllocates the specified consignments using service filters.\n"
   example: []
   syntax:
     content: >-
@@ -566,8 +558,10 @@ items:
     parameters:
     - id: request
       type: Sorted.PRO.SDK.DataTypes.Consignments.AllocateConsignmentsWithServiceFiltersRequest
+      description: The allocate with service filters request object.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate with service filters", "Allocates the consignments with service filters", "Allocation", GetType(AllocateConsignmentsWithServiceFiltersRequest), GetType(List(Of AllocationSummary)), "allocation/allocateConsignmentsWithServiceFilters", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -605,11 +599,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignments
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 189
+    startLine: 207
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the consignments using the specific carrier service group.\n"
+  summary: "\nAllocates the specified consignments to the cheapest eligible service in the specified carrier service group.\n"
   example: []
   syntax:
     content: >-
@@ -624,7 +618,7 @@ items:
       description: The request.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate With Service Group", "Allocates the consignments using the specified carrier service group.", "Allocation", GetType(AllocateConsignmentsWithServiceGroupRequest), GetType(List(Of AllocationSummary)), "/allocation/allocatewithservicegroup", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -662,11 +656,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignmentsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 210
+    startLine: 230
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the consignments using the specific carrier service group.\n"
+  summary: "\nAllocates consignments to the cheapest eligible service in the specified carrier service group. Asynchronous method.\n"
   example: []
   syntax:
     content: public Task<List<AllocationSummary>> AllocateConsignmentsAsync(AllocateConsignmentsWithServiceGroupRequest request)
@@ -676,7 +670,7 @@ items:
       description: The request.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: Public Function AllocateConsignmentsAsync(request As AllocateConsignmentsWithServiceGroupRequest) As Task(Of List(Of AllocationSummary))
   overload: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.AllocateConsignmentsAsync*
   implements:
@@ -703,11 +697,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignments
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 221
+    startLine: 243
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates all unallocated consignments due to be shipped before the specified date/time within the specified carrier service group.\n"
+  summary: "\nAllocates all unallocated consignments that are due to be shipped before the specified date/time to the cheapest eligible service in the specified carrier service group.\n"
   example: []
   syntax:
     content: >-
@@ -722,7 +716,7 @@ items:
       description: The request.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate All With Service Group", "Allocates all unallocated consignments due to be shipped before the specified date/time within the specified carrier service group.", "Allocation", GetType(AllocateAllConsignmentsWithServiceGroupRequest), GetType(List(Of AllocationSummary)), "/allocation/allocatewithservicegroup/{shipByDate=date}", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -760,11 +754,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignmentsAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 242
+    startLine: 266
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates all unallocated consignments due to be shipped before the specified date/time within the specified carrier service group.\n"
+  summary: "\nAllocates all unallocated consignments that are due to be shipped before the specified date/time to the cheapest eligible service in the specified carrier service group. Asynchronous method.\n"
   example: []
   syntax:
     content: public Task<List<AllocationSummary>> AllocateConsignmentsAsync(AllocateAllConsignmentsWithServiceGroupRequest request)
@@ -774,7 +768,7 @@ items:
       description: The request.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}}
-      description: ''
+      description: "\nDetails of the service(s) that the consignments were allocated to.\n"
     content.vb: Public Function AllocateConsignmentsAsync(request As AllocateAllConsignmentsWithServiceGroupRequest) As Task(Of List(Of AllocationSummary))
   overload: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.AllocateConsignmentsAsync*
   implements:
@@ -801,11 +795,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignment
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 254
+    startLine: 280
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the consignment using the default allocation rules.\n"
+  summary: "\nAllocates the consignment to the cheapest service that meets the default allocation rules.\n"
   example: []
   syntax:
     content: >-
@@ -820,7 +814,7 @@ items:
       description: The consignment reference.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
-      description: ''
+      description: "\nDetails of the service that the consignment was allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate Consignment", "Allocates the specified consignment using default rules.", "Allocation", "allocation/{consignmentReference:string}/allocatewithcheapestquote", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -858,11 +852,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignmentAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 273
+    startLine: 301
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the consignment using the default allocation rules.\n"
+  summary: "\nAllocates the consignment to the cheapest service that meets the default allocation rules. Asynchronous method.\n"
   example: []
   syntax:
     content: public Task<List<AllocationSummary>> AllocateConsignmentAsync(string consignmentReference)
@@ -872,7 +866,7 @@ items:
       description: The consignment reference.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}}
-      description: ''
+      description: "\nDetails of the service that the consignment was allocated to.\n"
     content.vb: Public Function AllocateConsignmentAsync(consignmentReference As String) As Task(Of List(Of AllocationSummary))
   overload: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.AllocateConsignmentAsync*
   implements:
@@ -899,7 +893,7 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignment
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 285
+    startLine: 315
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
@@ -921,7 +915,7 @@ items:
       description: The quote reference.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
-      description: ''
+      description: "\nDetails of the service that the consignment was allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate With Quote", "Allocates the consignment with the specified quote.", "Allocation", "/allocation/{consignmentReference:string}/allocatewithquote/{quoteReference:Guid}}", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -959,11 +953,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignmentAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 305
+    startLine: 337
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the consignment with the specfied quote.\n"
+  summary: "\nAllocates the consignment with the specfied quote. Asynchronous method.\n"
   example: []
   syntax:
     content: public Task<List<AllocationSummary>> AllocateConsignmentAsync(string consignmentReference, Guid quoteReference)
@@ -976,7 +970,7 @@ items:
       description: The quote reference.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}}
-      description: ''
+      description: "\nDetails of the service that the consignment was allocated to.\n"
     content.vb: Public Function AllocateConsignmentAsync(consignmentReference As String, quoteReference As Guid) As Task(Of List(Of AllocationSummary))
   overload: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.AllocateConsignmentAsync*
   implements:
@@ -1003,11 +997,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignment
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 317
+    startLine: 352
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the consignment using a service in the specified MPD Carrier Service Group\n"
+  summary: "\nAllocates the consignment to the cheapest eligible service in the specified carrier service group.\n"
   example: []
   syntax:
     content: >-
@@ -1025,6 +1019,7 @@ items:
       description: The MPD Carrier Service Group Reference.
     return:
       type: System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}
+      description: "\nDetails of the service that the consignment was allocated to.\n"
     content.vb: >-
       <ApiEndpoint("Allocate With Service Group", "Allocates the specified consignment with the specified Carrier Service Group.", "Allocation", "/allocation/{consignmentReference:string}/allocatewithservicegroup/{mpdCarrierServiceGroupReference:string}", "PUT", New HttpStatusCode() {HttpStatusCode.OK, HttpStatusCode.Accepted, HttpStatusCode.BadRequest})>
 
@@ -1062,11 +1057,11 @@ items:
       repo: git@bitbucket.org:mpdelectio/sorted.pro.sdk.git
     id: AllocateConsignmentAsync
     path: ../../sorted.pro.sdk/Sorted.PRO.SDK.Consignments/ConsignmentAllocationService.cs
-    startLine: 337
+    startLine: 375
   assemblies:
   - Sorted.PRO.SDK.Consignments
   namespace: Sorted.PRO.SDK.Consignments
-  summary: "\nAllocates the consignment using a service in the specified MPD Carrier Service Group\n"
+  summary: "\nAllocates the consignment to the cheapest eligible service in the specified carrier service group. Asynchronous method.\n"
   example: []
   syntax:
     content: public Task<List<AllocationSummary>> AllocateConsignmentAsync(string consignmentReference, string mpdCarrierServiceGroupReference)
@@ -1079,6 +1074,7 @@ items:
       description: The MPD Carrier Service Group Reference.
     return:
       type: System.Threading.Tasks.Task{System.Collections.Generic.List{Sorted.PRO.SDK.DataTypes.Consignments.AllocationSummary}}
+      description: "\nDetails of the service that the consignment was allocated to.\n"
     content.vb: Public Function AllocateConsignmentAsync(consignmentReference As String, mpdCarrierServiceGroupReference As String) As Task(Of List(Of AllocationSummary))
   overload: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.AllocateConsignmentAsync*
   implements:
@@ -1663,14 +1659,14 @@ references:
   name: ConsignmentAllocationService
   nameWithType: ConsignmentAllocationService
   fullName: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService
+- uid: Sorted.PRO.SDK.Interfaces.IEndpoints
+  commentId: T:Sorted.PRO.SDK.Interfaces.IEndpoints
+  isExternal: true
+- uid: Sorted.PRO.SDK.Interfaces.ILogger
+  commentId: T:Sorted.PRO.SDK.Interfaces.ILogger
+  isExternal: true
 - uid: System.Net.Http.HttpClient
   commentId: T:System.Net.Http.HttpClient
-  isExternal: true
-- uid: System.ArgumentNullException
-  commentId: T:System.ArgumentNullException
-  isExternal: true
-- uid: System.ArgumentException
-  commentId: T:System.ArgumentException
   isExternal: true
 - uid: Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.#ctor*
   commentId: Overload:Sorted.PRO.SDK.Consignments.ConsignmentAllocationService.#ctor
